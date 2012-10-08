@@ -16,7 +16,6 @@ alias m='mate'
 alias s='sl'
 alias v='vi'
 
-
 # shortcuts
 alias mysql='/usr/local/mysql/bin/mysql'
 
