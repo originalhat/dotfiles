@@ -20,6 +20,11 @@ alias v='vi'
 # shortcuts
 alias mysql='/usr/local/mysql/bin/mysql'
 
+# shortcuts - markdown
+alias today='~/Dropbox/dotfiles/bin/today'
+alias tomorrow='~/Dropbox/dotfiles/bin/tomorrow'
+alias touchdown='~/Dropbox/dotfiles/bin/touchdown'
+
 # directories
 alias cnagios='cd ~/dropbox/ncar/catalog-nagios/'
 alias cmodels='cd ~/dropbox/ncar/catalog_models/'
