@@ -38,3 +38,6 @@ alias jird='ssh devinb@jiradev'
 alias lito='ssh devinb@lightning'
 alias sfeo='ssh devinb@sferic -p 23'
 alias jiro='ssh devinb@jira -p 23' # no access
+
+# git autocompletion
+source ~/Dropbox/dotfiles/bin/.git-completion
