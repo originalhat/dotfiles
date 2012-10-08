@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# script to initialize and open TODAY markdown file
+
+filename=`date +TODAY-%Y%m%d.md`
+
+if [ ! -f $filename ]; then
+  echo \# `date +%A,\ %m/%d/%Y` >> $filename
+  echo created $filename
+fi
+
+open $filename
