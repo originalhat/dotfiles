@@ -1,5 +1,6 @@
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# rvm
+rvm_env="$HOME/.rvm/scripts/rvm"
+[[ -s $rvm_env ]] && source $rvm_env
 
 # Directory colors.
 export CLICOLOR=1
