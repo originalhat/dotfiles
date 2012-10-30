@@ -2,6 +2,9 @@
 rvm_env="$HOME/.rvm/scripts/rvm"
 [[ -s $rvm_env ]] && source $rvm_env
 
+# add ~/bin PATH
+export PATH=~/bin:$PATH
+
 # Directory colors.
 export CLICOLOR=1
 export LSCOLORS=gxFxCxDxBxegedabagaced
@@ -14,11 +17,7 @@ alias ..='cd ..'
 # text editors
 alias md='open -a Mou'
 alias m='mate'
-alias s='sl'
 alias v='vi'
-
-# shortcuts
-alias mysql='/usr/local/mysql/bin/mysql'
 
 # shortcuts - markdown
 alias today='~/Dropbox/dotfiles/bin/today'
