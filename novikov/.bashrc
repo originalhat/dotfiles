@@ -2,9 +2,6 @@
 rvm_env="$HOME/.rvm/scripts/rvm"
 [[ -s $rvm_env ]] && source $rvm_env
 
-# add custom prompt
-PS1="novikov $ "
-
 # add ~/bin PATH
 export PATH=~/bin:$PATH
 
@@ -21,9 +18,6 @@ alias ..='cd ..'
 alias md='open -a Mou'
 alias m='mate'
 alias v='vi'
-
-# shortcuts
-alias g='git'
 
 # shortcuts - markdown
 alias today='~/Dropbox/dotfiles/bin/today'
