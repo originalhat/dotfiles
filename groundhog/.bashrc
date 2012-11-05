@@ -2,6 +2,9 @@
 rvm_env="$HOME/.rvm/scripts/rvm"
 [[ -s $rvm_env ]] && source $rvm_env
 
+# add custom prompt
+PS1="groundhog $ "
+
 # Directory colors.
 export CLICOLOR=1
 export LSCOLORS=gxFxCxDxBxegedabagaced
