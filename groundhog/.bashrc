@@ -32,7 +32,7 @@ alias touchdown='~/.bin/touchdown'
 # directories
 alias cnagios='cd ~/dropbox/ncar/catalog-nagios/'
 alias cmodels='cd ~/dropbox/ncar/catalog_models/'
-alias cuinter='cd ~/dropbox/ncar/catalog_ui'
+alias catui='cd ~/dropbox/ncar/catalog_ui'
 alias dnotes='cd ~/dropbox/notes'
 
 # development
