@@ -25,9 +25,9 @@ alias mysql='/usr/local/mysql/bin/mysql'
 alias g='git'
 
 # shortcuts - markdown
-alias today='~/Dropbox/dotfiles/bin/today'
-alias tomorrow='~/Dropbox/dotfiles/bin/tomorrow'
-alias touchdown='~/Dropbox/dotfiles/bin/touchdown'
+alias today='~/.bin/today'
+alias tomorrow='~/.bin/tomorrow'
+alias touchdown='~/.bin/touchdown'
 
 # directories
 alias cnagios='cd ~/dropbox/ncar/catalog-nagios/'
@@ -46,4 +46,4 @@ alias sfeo='ssh devinb@sferic -p 23'
 alias jiro='ssh devinb@jira -p 23' # no access
 
 # git autocompletion
-source ~/Dropbox/dotfiles/bin/.git-completion
+source ~/.bin/.git-completion
