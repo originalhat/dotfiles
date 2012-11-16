@@ -33,6 +33,7 @@ alias touchdown='~/Dropbox/dotfiles/bin/touchdown'
 # directories
 alias cnagios='cd ~/dropbox/ncar/catalog-nagios/'
 alias cmodels='cd ~/dropbox/ncar/catalog_models/'
+alias dnotes='cd ~/dropbox/notes'
 
 # development
 alias ctmd='ssh devinb@ctm-dev'
