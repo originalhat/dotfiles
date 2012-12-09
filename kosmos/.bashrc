@@ -37,8 +37,8 @@ export CLICOLOR=1
 export LSCOLORS=gxFxCxDxBxegedabagaced
 
 # directories
-alias l='ls -FlG && pwd'
-alias ll='ls -aFlG && pwd'
+alias l='ls -FlG'
+alias ll='ls -aFlG'
 alias ..='cd ..'
 
 # text editors

@@ -1,6 +1,6 @@
 [user]
-    name  = octocat
-    email = octo@cat.com
+	name = Devin Brown
+    email = devin.g.brown@gmail.com
 
 [color]
     ui = auto
@@ -10,11 +10,11 @@
     s  = status -sb
     cl = config --list
     a  = add
-    ci = commit
+    c  = commit
     co = checkout
     d  = diff
     ds = diff --cached # diff staged changes
-    p  = push
+    p  = push origin
     b  = branch
     m  = merge --no-ff
     ll = log --graph --numstat --abbrev-commit
@@ -26,3 +26,5 @@
 
     develop = checkout develop
     master  = checkout master
+[push]
+	default = matching
