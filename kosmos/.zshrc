@@ -7,10 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -36,5 +32,39 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/heroku/bin:/Users/dgb/.rvm/gems/ruby-1.9.3-p327/bin:/Users/dgb/.rvm/gems/ruby-1.9.3-p327@global/bin:/Users/dgb/.rvm/rubies/ruby-1.9.3-p327/bin:/Users/dgb/.rvm/bin
+
+# directories
+alias l='ls -FlG'
+alias ll='ls -aFlG'
+alias ..='cd ..'
+
+# text editors
+alias md='open -a Mou'
+alias m='mate'
+alias s='/Users/dgb/bin/s'
+alias v='vi'
+
+# git alias
+alias g='git'
+
+# shortcuts - markdown
+alias today='~/bin/today'
+alias tomorrow='~/bin/tomorrow'
+alias touchdown='~/bin/touchdown'
+
+# directories
+alias cnagios='cd ~/dropbox/ncar/catalog-nagios/'
+alias cmodels='cd ~/dropbox/ncar/catalog_models/'
+alias catui='cd ~/dropbox/ncar/catalog_ui'
+alias dnotes='cd ~/dropbox/notes'
+
+# development
+alias ctmd='ssh devinb@ctm-dev'
+alias sfed='ssh devinb@sferic-dev'
+alias jird='ssh devinb@jiradev'
+
+# operations
+alias lito='ssh devinb@lightning'
+alias sfeo='ssh devinb@sferic -p 23'
+alias jiro='ssh devinb@jira -p 23' # no access
