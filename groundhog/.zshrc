@@ -42,6 +42,8 @@ rvm_env="$HOME/.rvm/scripts/rvm"
 
 alias rake='noglob rake'
 
+alias mysql='/usr/local/mysql/bin/mysql'
+
 # directories
 alias l='ls -FlG'
 alias ll='ls -aFlG'
@@ -57,14 +59,15 @@ alias v='vi'
 alias g='git'
 
 # shortcuts - markdown
-alias today='~/bin/today'
-alias tomorrow='~/bin/tomorrow'
-alias touchdown='~/bin/touchdown'
+alias today='~/.bin/today'
+alias tomorrow='~/.bin/tomorrow'
+alias touchdown='~/.bin/touchdown'
 
 # directories
-alias cnagios='cd ~/dropbox/ncar/catalog-nagios/'
-alias cmodels='cd ~/dropbox/ncar/catalog_models/'
-alias catui='cd ~/dropbox/ncar/catalog_ui'
+alias cnagios='cd ~/dropbox/ncar/catalog/catalog-nagios/'
+alias cmodels='cd ~/dropbox/ncar/catalog/catalog_models/'
+alias catui='cd ~/dropbox/ncar/catalog/catalog_ui'
+alias cmaps='cd ~/dropbox/ncar/catalog/catalog-maps'
 alias dnotes='cd ~/dropbox/notes'
 
 # development
@@ -76,3 +79,5 @@ alias jird='ssh devinb@jiradev'
 alias lito='ssh devinb@lightning'
 alias sfeo='ssh devinb@sferic -p 23'
 alias jiro='ssh devinb@jira -p 23' # no access
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
