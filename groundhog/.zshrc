@@ -67,6 +67,7 @@ alias touchdown='~/.bin/touchdown'
 alias cnagios='cd ~/dropbox/ncar/catalog/catalog-nagios/'
 alias cmodels='cd ~/dropbox/ncar/catalog/catalog_models/'
 alias catui='cd ~/dropbox/ncar/catalog/catalog_ui'
+alias cmaps='cd ~/dropbox/ncar/catalog/catalog-maps'
 alias dnotes='cd ~/dropbox/notes'
 
 # development
