@@ -42,7 +42,10 @@ rvm_env="$HOME/.rvm/scripts/rvm"
 
 alias rake='noglob rake'
 
+# mysql
 alias mysql='/usr/local/mysql/bin/mysql'
+alias mysql-start='sudo /usr/local/mysql/support-files/mysql.server start'
+alias mysql-stop='sudo /usr/local/mysql/support-files/mysql.server stop'
 
 # directories
 alias l='ls -FlG'
