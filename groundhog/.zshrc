@@ -32,9 +32,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/heroku/bin:/Users/dgb/.rvm/gems/ruby-1.9.3-p327/bin:/Users/dgb/.rvm/gems/ruby-1.9.3-p327@global/bin:/Users/dgb/.rvm/rubies/ruby-1.9.3-p327/bin:/Users/dgb/.rvm/bin
-
-export PATH=/Users/Devinb/.rvm/gems/ruby-1.8.7-p357@catalog_ui/bin:/Users/Devinb/.rvm/gems/ruby-1.8.7-p357@global/bin:/Users/Devinb/.rvm/rubies/ruby-1.8.7-p357/bin:/Users/Devinb/.rvm/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/usr/local/sbin
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # rvm
 rvm_env="$HOME/.rvm/scripts/rvm"
@@ -50,13 +48,11 @@ alias mysql-stop='sudo /usr/local/mysql/support-files/mysql.server stop'
 # directories
 alias l='ls -FlG'
 alias ll='ls -aFlG'
-alias ..='cd ..'
 
 # text editors
 alias md='open -a Mou'
 alias m='mate'
 alias s='/usr/local/bin/sl'
-alias v='vi'
 
 # git alias
 alias g='git'
@@ -82,5 +78,3 @@ alias jird='ssh devinb@jiradev'
 alias lito='ssh devinb@lightning'
 alias sfeo='ssh devinb@sferic -p 23'
 alias jiro='ssh devinb@jira -p 23' # no access
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
