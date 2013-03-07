@@ -1,22 +1,23 @@
 {
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Dayle Rees Color Schemes/Earthsong.tmTheme",
+	"color_scheme": "Packages/Dayle Rees Color Schemes/LastNight.tmTheme",
 	"draw_minimap_border": true,
 	"fade_fold_buttons": false,
-	"font_size": 11.0,
+	"font_face": "SourceCode",
+	"font_size": 12.0,
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
+		"BracketHighlighter",
+		"MarkdownEditing",
+		"SublimeLinter"
 	],
 	"line_padding_bottom": 0,
 	"line_padding_top": 1,
 	"margin": 0,
-	"rulers":
-	[
-		80
-	],
+	"rulers": [80, 120],
 	"scroll_past_end": true,
 	"theme": "Soda Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
