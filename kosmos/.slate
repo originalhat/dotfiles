@@ -46,3 +46,12 @@ bind right:ctrl;alt;cmd nudge +${global_increment}% +0
 bind left:ctrl;alt;cmd  nudge -${global_increment}% +0
 bind up:ctrl;alt;cmd    nudge +0 -${global_increment}%
 bind down:ctrl;alt;cmd  nudge +0 +${global_increment}%
+
+## Window Grid ##
+# bind g:cmd grid padding: 5 0:6,2
+
+## Throw to Previous Location ##
+ bind ;:cmd;ctrl throw previous
+
+## Hot Swap to Lettered Windows
+sbind /:cmd;ctrl hint ASDFGHJKL
