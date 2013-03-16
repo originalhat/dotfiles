@@ -1,0 +1,48 @@
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+## Global Aliases ##
+alias global_increment 2
+
+## Placement Aliases ##
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+
+## Corner Aliases ##
+bind 1:ctrl;alt;cmd ${topleft}
+bind 2:ctrl;alt;cmd ${topright}
+bind 3:ctrl;alt;cmd ${bottomleft}
+bind 4:ctrl;alt;cmd ${bottomright}
+
+## Left Screen ##
+bind left:ctrl;cmd ${lefthalf}
+
+## Right Screen ##
+bind right:ctrl;cmd ${righthalf}
+
+## "Full" Screen
+bind f:ctrl;alt;cmd ${full}
+
+## Top Screen ##
+bind up:ctrl;cmd push top bar-resize:screenSizeY/2
+
+## Bottom Screen ##
+bind down:ctrl;cmd push bottom bar-resize:screenSizeY/2
+
+## Resize ##
+bind right:alt;cmd       resize +${global_increment}% +0
+bind left:alt;cmd        resize -${global_increment}% +0
+bind up:alt;cmd          resize +0 -${global_increment}%
+bind down:alt;cmd        resize +0 +${global_increment}%
+
+## Nudge ##
+bind right:ctrl;alt;cmd nudge +${global_increment}% +0
+bind left:ctrl;alt;cmd  nudge -${global_increment}% +0
+bind up:ctrl;alt;cmd    nudge +0 -${global_increment}%
+bind down:ctrl;alt;cmd  nudge +0 +${global_increment}%
