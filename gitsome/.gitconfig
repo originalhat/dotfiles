@@ -1,6 +1,6 @@
 [user]
-  name = Devin Brown
-  email = devinb@ucar.edu
+    name = Devin Brown
+    email = devin.g.brown@gmail.com
 
 [color]
     ui = auto
@@ -14,7 +14,7 @@
     co = checkout
     d  = diff
     ds = diff --cached # diff staged changes
-    p  = push
+    p  = push origin
     b  = branch
     m  = merge --no-ff
     ll = log --graph --numstat --abbrev-commit
@@ -23,7 +23,8 @@
     ba = branch -a -vv # list all branches
 
     unstage = reset HEAD
-    u       = reset HEAD
 
     develop = checkout develop
     master  = checkout master
+[push]
+    default = matching
