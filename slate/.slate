@@ -3,7 +3,7 @@ config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
 ## Global Aliases ##
-alias global_increment 2
+alias global_increment_percentage 2
 
 ## Placement Aliases ##
 alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
@@ -42,16 +42,16 @@ alias center move ${centerOffsetX};${centerOffsetY} windowSizeX;windowSizeY
 bind c:ctrl;cmd ${center}
 
 ## Resize ##
-bind right:alt;cmd       resize +${global_increment}% +0
-bind left:alt;cmd        resize -${global_increment}% +0
-bind up:alt;cmd          resize +0 -${global_increment}%
-bind down:alt;cmd        resize +0 +${global_increment}%
+bind right:alt;cmd       resize +${global_increment_percentage}% +0
+bind left:alt;cmd        resize -${global_increment_percentage}% +0
+bind up:alt;cmd          resize +0 -${global_increment_percentage}%
+bind down:alt;cmd        resize +0 +${global_increment_percentage}%
 
 ## Nudge ##
-bind right:ctrl;alt;cmd nudge +${global_increment}% +0
-bind left:ctrl;alt;cmd  nudge -${global_increment}% +0
-bind up:ctrl;alt;cmd    nudge +0 -${global_increment}%
-bind down:ctrl;alt;cmd  nudge +0 +${global_increment}%
+bind right:ctrl;alt;cmd nudge +${global_increment_percentage}% +0
+bind left:ctrl;alt;cmd  nudge -${global_increment_percentage}% +0
+bind up:ctrl;alt;cmd    nudge +0 -${global_increment_percentage}%
+bind down:ctrl;alt;cmd  nudge +0 +${global_increment_percentage}%
 
 ## Window Grid ##
 # bind g:cmd grid padding: 5 0:6,2
