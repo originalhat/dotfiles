@@ -1,4 +1,4 @@
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme blackdust 
 set nu

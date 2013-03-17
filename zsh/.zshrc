@@ -34,6 +34,8 @@ source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+export PATH=$HOME/bin:$PATH # Include ~/bin/ in PATH
+
 # rvm
 rvm_env="$HOME/.rvm/scripts/rvm"
 [[ -s $rvm_env ]] && source $rvm_env
@@ -52,7 +54,6 @@ alias ll='ls -aFlG'
 # text editors
 alias md='open -a Mou'
 alias m='mate'
-alias s='/usr/local/bin/sl'
 
 # git alias
 alias g='git'
