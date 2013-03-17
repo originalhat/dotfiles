@@ -59,9 +59,9 @@ alias m='mate'
 alias g='git'
 
 # shortcuts - markdown
-alias today='~/.bin/today'
-alias tomorrow='~/.bin/tomorrow'
-alias touchdown='~/.bin/touchdown'
+alias today='~/bin/today'
+alias tomorrow='~/bin/tomorrow'
+alias touchdown='~/bin/touchdown'
 
 # directories
 alias cnagios='cd ~/dropbox/ncar/catalog/catalog-nagios/'
