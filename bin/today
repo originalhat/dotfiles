@@ -2,7 +2,6 @@
 
 # script to initialize and open TODAY markdown file
 
-prefix="TODAY"
 strftime_header="%A, %B %d, %Y"
 
 # assign input arguments to filename and header
@@ -16,7 +15,7 @@ if [ $1 ]; then
   strftime_header="$1, %m-%d-%Y"
 fi
 
-filename=`date +$prefix-%Y-%m-%d.md`
+filename=`date +%Y-%m-%d.md`
 
 if [ ! -f $filename ]; then
   echo \# `date +"$strftime_header"` >> $filename
