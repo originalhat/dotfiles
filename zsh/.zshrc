@@ -64,6 +64,7 @@ alias tomorrow='~/bin/tomorrow'
 alias touchdown='~/bin/touchdown'
 
 # directories
+alias cating='cd ~/dropbox/ncar/catalog/catalog-ingest/'
 alias cnagios='cd ~/dropbox/ncar/catalog/catalog-nagios/'
 alias cmodels='cd ~/dropbox/ncar/catalog/catalog_models/'
 alias catui='cd ~/dropbox/ncar/catalog/catalog_ui'
