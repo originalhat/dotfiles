@@ -77,6 +77,5 @@ alias sfed='ssh devinb@sferic-dev'
 alias jird='ssh devinb@jiradev'
 
 # operations
-alias lito='ssh devinb@lightning'
-alias sfeo='ssh devinb@sferic -p 23'
-alias jiro='ssh devinb@jira -p 23' # no access
+alias sferic='ssh devinb@sferic -p 23'
+alias doppler='ssh devinb@doppler -p 23'
