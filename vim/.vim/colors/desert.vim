@@ -1,4 +1,4 @@
- Vim color file
+" Vim color file
 " Maintainer:   Hans Fugal <hans@fugal.net>
 " Last Change:  $Date: 2003/06/02 19:28:15 $
 " URL:    http://hans.fugal.net/vim/colors/desert.vim
