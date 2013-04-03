@@ -110,3 +110,6 @@ function! ParserTest(parser)
   call feedkeys("ggdG:read !./runner.py rparse/" . a:parser . " 2>&1\<cr>\<cr>gg")
 endfunction
 command! -nargs=1 PT :call ParserTest("test_<args>.py") " invoke with `:PT parser_name`. Best to load python 2.5 virtualenv first
+
+" trim trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
