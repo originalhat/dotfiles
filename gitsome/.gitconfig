@@ -30,3 +30,4 @@
     default = matching
 [core]
 	excludesfile = /Users/Devinb/.gitignore
+	excludesfile = /Users/dgb/.gitignore
