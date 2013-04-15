@@ -1,6 +1,6 @@
 [user]
     name = Devin Brown
-    email = devin.g.brown@gmail.com
+    email = devinb@ucar.edu
 
 [color]
     ui = auto
@@ -28,3 +28,5 @@
     master  = checkout master
 [push]
     default = matching
+[core]
+	excludesfile = /Users/Devinb/.gitignore
