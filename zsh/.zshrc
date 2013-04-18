@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="cloud"
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="false"
@@ -41,11 +41,6 @@ rvm_env="$HOME/.rvm/scripts/rvm"
 [[ -s $rvm_env ]] && source $rvm_env
 
 alias rake='noglob rake'
-
-# mysql
-alias mysql='/usr/local/mysql/bin/mysql'
-alias mysql-start='sudo /usr/local/mysql/support-files/mysql.server start'
-alias mysql-stop='sudo /usr/local/mysql/support-files/mysql.server stop'
 
 # directories
 alias l='ls -FlG'
