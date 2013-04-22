@@ -1,5 +1,4 @@
 source ~/.vim/plugins.vim
-
 set hidden                                                " don't unload buffer when switching away
 set modeline                                              " allow per-file settings via modeline
 set exrc                                                  " enable per-directory .vimrc files
@@ -113,3 +112,5 @@ command! -nargs=1 PT :call ParserTest("test_<args>.py") " invoke with `:PT parse
 
 " trim trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+set pastetoggle=<F2>
