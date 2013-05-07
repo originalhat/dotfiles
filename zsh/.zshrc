@@ -52,6 +52,7 @@ alias m='mate'
 
 # git alias
 alias g='git'
+alias gca='git add -A; git commit -a -m "`curl -s http://whatthecommit.com/index.txt`"'
 
 # shortcuts - markdown
 alias today='~/bin/today'
