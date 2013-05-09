@@ -30,3 +30,7 @@
     default = matching
 [core]
 	excludesfile = /Users/Devinb/.gitignore
+[github]
+	user = devinbrown
+[ghi]
+	token = 1295513edcf99f428928621b589b9f046d41a41f
