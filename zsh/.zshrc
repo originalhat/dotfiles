@@ -18,7 +18,6 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 export PATH=$HOME/bin:$PATH # Include ~/bin/ in PATH
 
 # rvm
