@@ -1,16 +1,36 @@
 [user]
-    name  = Devin Brown
-    email = devin.g.brown@gmail.com
+  name  = Devin Brown
+  email = devin.g.brown@gmail.com
 
 [color]
-    ui = auto
+  ui = auto
 
 [alias]
-    ll = log --graph --numstat --abbrev-commit
-    l  = log --graph --pretty='format:%C(yellow)%h%Cblue%d%Creset %s.%C(white) %an, %ar%Creset'
+  ss = status
+  s  = status -sb
+  cl = config --list
+  a  = add
+  c  = commit
+  co = checkout
+  d  = diff
+  ds = diff --cached # diff staged changes
+  p  = push origin
+  b  = branch
+  m  = merge --no-ff
+  ll = log --graph --numstat --abbrev-commit
+  l  = log --graph --pretty='format:%C(yellow)%h%Cblue%d%Creset %s.%C(white) %an, %ar%Creset'
+  lp = log -p
+  ba = branch -a -vv # list all branches
+
+  unstage = reset HEAD
+
+  develop = checkout develop
+  master  = checkout master
+[push]
+    default = matching
 [core]
-	excludesfile = /Users/Devinb/.gitignore
+  excludesfile = /Users/Devinb/.gitignore
 [github]
-	user = devinbrown
+  user = devinbrown
 [ghi]
-	token = 1295513edcf99f428928621b589b9f046d41a41f
+  token = 1295513edcf99f428928621b589b9f046d41a41f
