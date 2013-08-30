@@ -18,7 +18,13 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH # Include ~/bin/ in PATH
+export PATH=/usr/local/share/npm/bin:$PATH
+export JAVA_HOME="$(/usr/libexec/java_home)"
+
+JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home"
 
 # rvm
 rvm_env="$HOME/.rvm/scripts/rvm"
@@ -44,18 +50,5 @@ alias tomorrow='~/bin/tomorrow'
 alias touchdown='~/bin/touchdown'
 
 # directories
-alias cating='cd ~/dropbox/ncar/catalog/catalog-ingest/'
-alias cnagios='cd ~/dropbox/ncar/catalog/catalog-nagios/'
-alias cmodels='cd ~/dropbox/ncar/catalog/catalog_models/'
-alias catui='cd ~/dropbox/ncar/catalog/catalog_ui'
-alias cmaps='cd ~/dropbox/ncar/catalog/catalog-maps'
 alias dnotes='cd ~/dropbox/notes'
 
-# development
-alias ctmd='ssh devinb@ctm-dev'
-alias sfed='ssh devinb@sferic-dev'
-alias jird='ssh devinb@jiradev'
-
-# operations
-alias sferic='ssh devinb@sferic -p 23'
-alias doppler='ssh devinb@doppler -p 23'
