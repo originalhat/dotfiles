@@ -1,5 +1,7 @@
 # devinbrown/dotfiles
 
+Loose change, dotfiles and other random configuration items.
+
 ## TODO
 
 - script to `ln -s` all relevant **utility-config** files
