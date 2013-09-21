@@ -14,7 +14,8 @@
   co = checkout
   d  = diff
   ds = diff --cached # diff staged changes
-  p  = push origin
+  pr = pull --rebase
+  p  = push
   b  = branch
   m  = merge --no-ff
   ll = log --graph --numstat --abbrev-commit
