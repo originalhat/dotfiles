@@ -1,4 +1,4 @@
-# devinbrown/utility-config
+# devinbrown/dotfiles
 
 ## TODO
 
