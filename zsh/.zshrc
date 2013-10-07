@@ -55,3 +55,5 @@ alias touchdown='~/bin/touchdown'
 # directories
 alias dnotes='cd ~/dropbox/notes'
 
+# mq-machines
+alias market='ssh mapquest@10.169.58.253'
