@@ -7,12 +7,12 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage"
+    "Vintage"
 	],
 	"line_padding_top": 1,
 	"rulers":
 	[
-		80
+	        80
 	],
 	"scroll_past_end": true,
 	"scroll_speed": 10.0,
