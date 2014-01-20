@@ -19,7 +19,7 @@
   b  = branch
   m  = merge --no-ff
   ll = log --graph --numstat --abbrev-commit
-  l  = log --graph --pretty='format:%C(yellow)%h%Cblue%d%Creset %s.%C(white) %an, %ar%Creset'
+  l  = log --graph --pretty='format:%C(yellow)%h%Cblue%d%Creset %s%C(white) %an, %ar%Creset'
   lp = log -p
   ba = branch -a -vv # list all branches
 
