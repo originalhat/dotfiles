@@ -35,6 +35,8 @@ rvm_env="$HOME/.rvm/scripts/rvm"
 
 alias rake='noglob rake'
 
+alias be='bundle exec'
+
 # directories
 alias l='ls -FlG'
 alias ll='ls -aFlG'
