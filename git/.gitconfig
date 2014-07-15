@@ -1,6 +1,6 @@
 [user]
-	name = Devin Brown
-	email = devin.g.brown@gmail.com
+  name = Devin Brown
+  email = devin.g.brown@gmail.com
 
 [color]
   ui = auto
@@ -28,11 +28,11 @@
   develop = checkout develop
   master  = checkout master
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
 [github]
   user = obfk
 [pull]
-	default = current
+  default = current
 [push]
-	default = current
+  default = current
 	
