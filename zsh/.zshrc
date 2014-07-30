@@ -43,7 +43,6 @@ alias ll='ls -aFlG'
 
 # text editors
 alias md='open -a Mou'
-alias m='mate'
 
 # git alias
 alias g='git'
@@ -56,6 +55,3 @@ alias touchdown='~/bin/touchdown'
 
 # directories
 alias dnotes='cd ~/dropbox/notes'
-
-# mq-machines
-alias market='ssh mapquest@10.169.58.253'
