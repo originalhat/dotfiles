@@ -22,7 +22,6 @@ source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH # Include ~/bin/ in PATH
 export PATH=/usr/local/share/npm/bin:$PATH
@@ -44,8 +43,6 @@ alias ll='ls -aFlG'
 
 # text editors
 alias md='open -a Mou'
-
-alias for='foreman'
 
 # git alias
 alias g='git'
