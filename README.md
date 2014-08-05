@@ -15,3 +15,7 @@ Loose change, dotfiles and other random configuration items.
 ## VIM
 
 - https://github.com/gmarik/vundle
+
+## RubyMine Preferences
+
+cf. [pivotal/rubymine](https://github.com/pivotal/Pivotal-Preferences-RubyMine)
