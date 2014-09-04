@@ -35,6 +35,8 @@ rvm_env="$HOME/.rvm/scripts/rvm"
 
 alias rake='noglob rake'
 
+alias fore='foreman'
+
 alias be='bundle exec'
 
 # directories
@@ -55,3 +57,6 @@ alias touchdown='~/bin/touchdown'
 
 # directories
 alias dnotes='cd ~/dropbox/notes'
+
+alias tail-stage='ssh itsquik@10.210.194.192 tail -f /usr/local/ordernow/httpd/htdocs/splickitweb/current/log/staging.log'
+
