@@ -22,7 +22,7 @@
   l  = log --graph --pretty='format:%C(yellow)%h%Cblue%d%Creset %s%C(white) %an, %ar%Creset'
   lp = log -p
   ba = branch -a -vv # list all branches
-  bd = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate) %(refname:short)'
+  bd = "for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate) %1B[0;31m%(refname:short)%1B[m'"
 
   unstage = reset HEAD
 
