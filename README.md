@@ -19,3 +19,7 @@ Loose change, dotfiles and other random configuration items.
 ## RubyMine Preferences
 
 cf. [pivotal/rubymine](https://github.com/pivotal/Pivotal-Preferences-RubyMine)
+
+## Fonts
+
+* http://www.levien.com/type/myfonts/inconsolata.html
