@@ -1,0 +1,3 @@
+[submodule "pivotal_ide_prefs"]
+	path = pivotal_ide_prefs
+	url = git@github.com:pivotal/pivotal_ide_prefs.git
