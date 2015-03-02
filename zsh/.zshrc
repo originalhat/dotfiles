@@ -18,11 +18,16 @@ plugins=(gitifast)
 # DISABLE AUTOCORRECT
 unsetopt correct_all
 
+# zsh magic
 source $ZSH/oh-my-zsh.sh
 
+# bin in path
 PATH=$PATH:~/bin
 
+# foreman
 alias f='foreman'
+alias fs='foreman start'
+alias fr='foreman run'
 
 # directories
 alias l='ls -FlG'
@@ -36,7 +41,6 @@ alias g='git'
 alias gca='git add -A; git commit -a -m "`curl -s http://whatthecommit.com/index.txt`"'
 
 # rbenv
-
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # databases
