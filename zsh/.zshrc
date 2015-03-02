@@ -20,20 +20,7 @@ unsetopt correct_all
 
 source $ZSH/oh-my-zsh.sh
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/bin:$PATH # Include ~/bin/ in PATH
-export PATH=/usr/local/share/npm/bin:$PATH
-export JAVA_HOME="$(/usr/libexec/java_home)"
-
-JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home"
-
-# rvm
-rvm_env="$HOME/.rvm/scripts/rvm"
-[[ -s $rvm_env ]] && source $rvm_env
-
-alias rake='noglob rake'
+PATH=$PATH:~/bin
 
 alias fore='foreman'
 
@@ -58,5 +45,11 @@ alias touchdown='~/bin/touchdown'
 # directories
 alias dnotes='cd ~/dropbox/notes'
 
-alias tail-stage='ssh itsquik@10.210.194.192 tail -f /usr/local/ordernow/httpd/htdocs/splickitweb/current/log/staging.log'
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# rbenv
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# databases
 
