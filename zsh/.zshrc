@@ -22,9 +22,7 @@ source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:~/bin
 
-alias fore='foreman'
-
-alias be='bundle exec'
+alias f='foreman'
 
 # directories
 alias l='ls -FlG'
@@ -36,16 +34,6 @@ alias md='open -a Mou'
 # git alias
 alias g='git'
 alias gca='git add -A; git commit -a -m "`curl -s http://whatthecommit.com/index.txt`"'
-
-# shortcuts - markdown
-alias today='~/bin/today'
-alias tomorrow='~/bin/tomorrow'
-alias touchdown='~/bin/touchdown'
-
-# directories
-alias dnotes='cd ~/dropbox/notes'
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # rbenv
 
