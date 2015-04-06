@@ -44,4 +44,4 @@ alias gca='git add -A; git commit -a -m "`curl -s http://whatthecommit.com/index
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # databases
-
+alias smaw-test="mysql -u itsquik -h rds-test.splickit.com -D smaw_test -p -A"
