@@ -1,0 +1,6 @@
+#!/bin/bash
+echo clearing local branches...
+git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+echo clearing remote branches...
+git branch -r | awk -F/ '/\/dgb/{print ":" $2 "/" $3 "/" $4}' | xargs git push origin
+
