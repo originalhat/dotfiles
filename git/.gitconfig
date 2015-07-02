@@ -10,7 +10,7 @@
   s  = status -sb
   cl = config --list
   a  = add
-  c  = commit
+  c  = commit --verbose
   co = checkout
   d  = diff
   ds = diff --cached # diff staged changes

@@ -25,9 +25,9 @@ source $ZSH/oh-my-zsh.sh
 PATH=$PATH:~/bin
 
 # foreman
-alias f='foreman'
-alias fs='foreman start'
-alias fr='foreman run'
+alias f='bundle exec foreman'
+alias fs='bundle exec foreman start'
+alias fr='bundle exec foreman run'
 
 # directories
 alias l='ls -FlG'
@@ -43,5 +43,3 @@ alias gca='git add -A; git commit -a -m "`curl -s http://whatthecommit.com/index
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# databases
-alias smaw-test="mysql -u itsquik -h rds-test.splickit.com -D smaw_test -p -A"
