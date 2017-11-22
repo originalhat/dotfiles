@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo 'link vimrc...✅'
+ln -fs $(pwd)/vim/.vimrc $HOME/.vimrc
+
+echo 'link zshrc...✅'
+ln -fs $(pwd)/zsh/.zshrc $HOME/.zshrc
+
