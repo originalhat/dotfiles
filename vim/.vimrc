@@ -24,3 +24,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " fuzzy file, buffer, mru, tag, etc finder
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+" trim trailing whitespace before save
+autocmd BufWritePre * %s/\s\+$//e
+
