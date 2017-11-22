@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-ZSH_THEME="gianu"
+ZSH_THEME="kolo"
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="false"
@@ -21,25 +21,28 @@ unsetopt correct_all
 # zsh magic
 source $ZSH/oh-my-zsh.sh
 
-# bin in path
-PATH=$PATH:~/bin
-
-# foreman
-alias f='bundle exec foreman'
-alias fs='bundle exec foreman start'
-alias fr='bundle exec foreman run'
+# FIXME: workspace in path
+# PATH=$PATH:~/workspace
 
 # directories
 alias l='ls -FlG'
 alias ll='ls -aFlG'
 
-# text editors
-alias md='open -a Mou'
-
 # git alias
-alias g='git'
-alias gca='git add -A; git commit -a -m "`curl -s http://whatthecommit.com/index.txt`"'
+alias gap='git ap'
+alias gca='git commit -a -m "`curl -s http://whatthecommit.com/index.txt`"'
+alias gst='git status'
 
-# rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# add yarn to PATH
+export PATH="$PATH:`yarn global bin`"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/pipeline/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/pipeline/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/pipeline/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/pipeline/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
