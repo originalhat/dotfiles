@@ -6,6 +6,12 @@ syntax on
 " lines have numbers
 set number
 
+" whitespace as tabs
+set expandtab
+
+" sane tab sizing
+set shiftwidth=2
+
 " comments are italic
 highlight Comment cterm=italic
 
