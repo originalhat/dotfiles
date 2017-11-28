@@ -10,7 +10,13 @@ set number
 set expandtab
 
 " sane tab sizing
+set tabstop=2
+
+" sane tab sizing
 set shiftwidth=2
+
+" sane tab sizing
+set expandtab
 
 " comments are italic
 highlight Comment cterm=italic
@@ -31,7 +37,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|build\'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " always show dotfiles w/ ctrp
-let g:ctrlp_show_hidden = 1
+" let g:ctrlp_show_hidden = 1
 
 " trim trailing whitespace before save
 autocmd BufWritePre * %s/\s\+$//e
