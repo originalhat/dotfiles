@@ -42,8 +42,6 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " trim trailing whitespace before save
 autocmd BufWritePre * %s/\s\+$//e
 
-" open NERDTREE w/ specific binding
-map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
-map <silent> <LocalLeader>nr :NERDTree<CR>
-map <silent> <LocalLeader>nf :NERDTreeFind<CR>
+" NERDTREE
+map <C-n> :NERDTreeToggle<CR>
 

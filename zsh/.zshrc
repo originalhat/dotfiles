@@ -24,6 +24,14 @@ source $ZSH/oh-my-zsh.sh
 # FIXME: workspace in path
 # PATH=$PATH:~/workspace
 
+# GOLANG path
+export PATH=$PATH:$(go env GOPATH)/bin
+
+# RUST path
+export PATH="$HOME/.cargo/bin:$PATH"
+
+alias gsd='cd ~/workspace'
+
 # directories
 alias l='ls -FlG'
 alias ll='ls -aFlG'
@@ -49,3 +57,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 alias g='gradle'
 
+export PATH="/usr/local/opt/openssl/bin:$PATH"
