@@ -57,4 +57,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 alias g='gradle'
 
+alias kube='kubectl'
+
 export PATH="/usr/local/opt/openssl/bin:$PATH"
