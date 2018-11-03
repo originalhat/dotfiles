@@ -60,3 +60,6 @@ alias g='gradle'
 alias kube='kubectl'
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+eval "$(fasd --init auto)"
+

@@ -1,0 +1,3 @@
+[submodule "vim/.vim/bundle/vim-jsx"]
+	path = vim/.vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
