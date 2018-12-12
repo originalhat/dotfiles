@@ -45,3 +45,13 @@ autocmd BufWritePre * %s/\s\+$//e
 " NERDTREE
 map <C-n> :NERDTreeToggle<CR>
 
+" training wheels
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
