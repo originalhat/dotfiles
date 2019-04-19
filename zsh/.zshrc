@@ -37,7 +37,7 @@ alias l='ls -FlG'
 alias ll='ls -aFlG'
 
 # git alias
-alias gap='git ap'
+alias gap='git add -p'
 alias gca='git commit -a -m "`curl -s http://whatthecommit.com/index.txt`"'
 alias gst='git status'
 
