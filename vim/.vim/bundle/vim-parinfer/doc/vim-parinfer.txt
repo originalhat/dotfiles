@@ -1,0 +1,45 @@
+*vim-parinfer.txt*	Simpler Lisp editing in vim
+
+
+                                                  ( `
+   )   (      )                  )  (   (         )\ )    (   ( `
+  /((  )\    (     ___ `  )   ( /(  )(  )\   (   (()/(   ))\  )( `
+ (_))\((_)   )\  '|___|/(/(   )(_))(()\((_)  )\ ) /(_)) /((_)(()\ `
+ _)((_)(_) _((_))     ((_)_\ ((_)_  ((_)(_) _(_/((_) _|(_))   ((_) `
+ \ V / | || '  \()    | '_ \)/ _` || '_|| || ' \))|  _|/ -_) | '_| `
+  \_/  |_||_|_|_|     | .__/ \__,_||_|  |_||_||_| |_|  \___| |_| `
+                      |_| `
+
+
+INTRODUCTION                                           *parinfer-introduction*
+
+vim-parinfer is a plugin for parinfer-style editing in vim [0].
+
+[0]: https://shaunlebron.github.io/parinfer/
+
+INSTALLATION                                           *parinfer-installation*
+
+clone vim-parinfer into your vim config using pathogen or vundle
+
+MAPPINGS                                                    *parinfer-mappings*
+
+- `<Tab>` - indents s-expression
+- `<Tab-S>` - dedents s-expression
+- `dd` - deletes line and balances parenthesis
+- `p` - puts line and balances parenthesis
+
+Currently text changes in insert mode changes **do not** cause parinfer
+evaluation. The eval is caused when ***leaving*** insert mode.
+
+Additional file types and filenames may be handled with vim-parinfer by
+adjusting g:vim_parinfer_globs and g:vim_parinfer_filetypes within your vimrc.
+Review parinfer.vim in the source code for how to specify these variables.  For
+example, to handle **only** Scheme files with names like *.scm, one might specify
+
+- `let g:vim_parinfer_globs = ['*.scm']
+- `let g:vim_parinfer_filetypes = ['scheme']
+
+NOTES                                                          *parinfer-notes*
+
+since v 1.0.0. uses pure vimscript for parinfer parsing
+

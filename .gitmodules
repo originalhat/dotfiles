@@ -4,9 +4,6 @@
 [submodule "vim/.vim/bundle/ale"]
 	path = vim/.vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "vim/.vim/bundle/ctrlp.vim"]
-	path = vim/.vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/.vim/bundle/nerdtree"]
 	path = vim/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -31,3 +28,18 @@
 [submodule "vim/.vim/bundle/vundle"]
 	path = vim/.vim/bundle/vundle
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/.vim/nerdtree"]
+	path = vim/.vim/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "vim/.vim/ctrlp.vim"]
+	path = vim/.vim/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/.vim/bundle/vim-dispatch"]
+	path = vim/.vim/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "vim/.vim/bundle/vim-fireplace"]
+	path = vim/.vim/bundle/vim-fireplace
+	url = https://github.com/tpope/vim-fireplace

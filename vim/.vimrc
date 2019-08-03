@@ -31,7 +31,7 @@ autocmd BufReadPost *
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,*/target/*
 
 " ignorables for ctrlp
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|build|target\'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|build|target\|resources/public/js'
 
 " fuzzy file, buffer, mru, tag, etc finder
 set runtimepath^=~/.vim/bundle/ctrlp.vim

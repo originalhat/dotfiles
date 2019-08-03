@@ -23,13 +23,14 @@
   lp = log -p
   bdr = "for-each-ref --sort=-committerdate refs/remotes/ --format='%(committerdate:short) %1B[0;31m%(refname:short)%1B[m'"
   bdl = "for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %1B[0;31m%(refname:short)%1B[m'"
+  sur = "submodule update --init --recursive"
 
   unstage = reset HEAD
 
   develop = checkout develop
   master  = checkout master
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/devinbrown/.gitignore_global
 [github]
   user = originalhat
 [pull]
