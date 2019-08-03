@@ -18,6 +18,9 @@ set shiftwidth=2
 " sane tab sizing
 set expandtab
 
+" update vim more quickly
+set updatetime=100
+
 " comments are italic
 highlight Comment cterm=italic
 
