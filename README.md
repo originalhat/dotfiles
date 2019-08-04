@@ -2,6 +2,12 @@
 
 Loose change, dotfiles and other random configuration items.
 
+## vim
+
+```
+./vim/set-helptags.sh
+```
+
 ## monitor calibration
 
 1. close/disconnect all other screens
