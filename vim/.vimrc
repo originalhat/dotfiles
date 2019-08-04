@@ -36,6 +36,9 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/build/*,*/target/*
 " ignorables for ctrlp
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|build|target\|resources/public/js'
 
+" use current directory for searching files
+let g:ctrlp_working_path_mode = 0
+
 " fuzzy file, buffer, mru, tag, etc finder
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -57,4 +60,11 @@ noremap  <Left> ""
 noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
+
+" active window/line highlighting
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
+augroup END
 
