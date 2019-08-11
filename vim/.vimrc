@@ -21,6 +21,9 @@ set expandtab
 " update vim more quickly
 set updatetime=100
 
+" highlight search matches
+set hls
+
 " comments are italic
 highlight Comment cterm=italic
 
@@ -51,10 +54,10 @@ autocmd BufWritePre * %s/\s\+$//e
 " NERDTREE
 map <C-n> :NERDTreeToggle<CR>
 
-" active window/line highlighting
-augroup BgHighlight
-    autocmd!
-    autocmd WinEnter * set cul
-    autocmd WinLeave * set nocul
+" active line highlighting
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
 augroup END
 
