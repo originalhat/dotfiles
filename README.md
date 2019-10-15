@@ -12,11 +12,11 @@ Loose change, dotfiles and other random configuration items.
 
 1. close/disconnect all other screens
 2. run script
-3. ~disable [SIP](https://stackoverflow.com/a/31240418)~
-3. `sudo mount -uw / && killall Finder` (catalina; _unproven_)
-4. move generated files to `/System/Library/Displays/Contents/Resources/Overrides/`
-5. disconnect/reconnect (or restart) to take effect
-6. re-enable SIP!
+3. disable [SIP](https://stackoverflow.com/a/32910408):
+4. `sudo mount -uw / && killall Finder` (catalina)
+5. move generated files to `/System/Library/Displays/Contents/Resources/Overrides/`
+6. disconnect/reconnect (or restart) to take effect
+7. re-enable SIP!
 
 Additional references:
 
