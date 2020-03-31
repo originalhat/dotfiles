@@ -2,4 +2,5 @@
 *.iml
 .lein/
 *.swp
+.DS_Store
 

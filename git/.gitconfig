@@ -6,24 +6,14 @@
   ui = auto
 
 [alias]
-  ss = status
-  s  = status -sb
-  cl = config --list
-  a  = add
   ci = commit --verbose
   co = checkout
-  d  = diff
-  ds = diff --cached # diff staged changes
-  pr = pull --rebase
-  p  = push
-  b  = branch
-  m  = merge --no-ff
   ll = log --graph --numstat --abbrev-commit
   l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  lp = log -p
   bdr = "for-each-ref --sort=-committerdate refs/remotes/ --format='%(committerdate:short) %1B[0;31m%(refname:short)%1B[m'"
   bdl = "for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %1B[0;31m%(refname:short)%1B[m'"
   sur = "submodule update --init --recursive"
+  please = "push --force-with-lease"
 
   unstage = reset HEAD
 
