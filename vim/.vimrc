@@ -18,6 +18,11 @@ set shiftwidth=2
 " sane tab sizing
 set expandtab
 
+" TODO: can this be markdown specfic? auto-formatting is a great way to shoot
+" yourself in the foot
+" automatic formatting of paragraphs
+"set formatoptions+=a
+
 " update vim more quickly
 set updatetime=100
 

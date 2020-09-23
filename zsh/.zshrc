@@ -21,6 +21,9 @@ unsetopt correct_all
 # zsh magic
 source $ZSH/oh-my-zsh.sh
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # FIXME: workspace in path
 # PATH=$PATH:~/workspace
 
@@ -47,9 +50,6 @@ alias gap='git add -p'
 alias gca='git commit -a -m "`curl -s http://whatthecommit.com/index.txt`"'
 alias gst='git status'
 
-# graylog
-alias gray='ssh -f -N -L 9000:graylog-primary.infra.circleci.com:80 jumphost-base.prod.circleci.com'
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # add yarn to PATH
@@ -58,17 +58,11 @@ export PATH="$PATH:`yarn global bin`"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-export PATH="/usr/local/opt/node@8/bin:$PATH"
-
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 eval "$(fasd --init auto)"
 
 export PATH="/usr/local/sbin:$PATH"
-
-# GrayLog
-alias gl-up="ssh -f -N -L 9000:graylog-primary.infra.circleci.com:80 jumphost-base.prod.circleci.com"
-alias gl-down='kill $(lsof -t -i:9000)'
 
 # K8s
 alias ssh-k8s="ssh kube-kubectl-us-east-1-b.infra.circleci.com"
@@ -84,3 +78,4 @@ alias dc="docker-compose"
 unsetopt inc_append_history
 unsetopt share_history
 
+export PATH="/usr/local/opt/node@10/bin:$PATH"
