@@ -34,7 +34,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
 # Ruby path
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 alias gsd='cd ~/workspace'
 
