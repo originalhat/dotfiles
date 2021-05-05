@@ -24,21 +24,6 @@ source $ZSH/oh-my-zsh.sh
 # direnv
 eval "$(direnv hook zsh)"
 
-# FIXME: workspace in path
-# PATH=$PATH:~/workspace
-
-# GOLANG path
-export PATH=$PATH:$(go env GOPATH)/bin
-
-# RUST path
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# Ruby Gems path
-export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-
-# Ruby path
-# eval "$(rbenv init -)"
-
 alias gsd='cd ~/workspace'
 
 # directories
@@ -52,24 +37,18 @@ alias gst='git status'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# add yarn to PATH
-export PATH="$PATH:`yarn global bin`"
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
 
-export PATH="/usr/local/opt/openssl/bin:$PATH"
+# export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 eval "$(fasd --init auto)"
 
-export PATH="/usr/local/sbin:$PATH"
-
-# K8s
-alias ssh-k8s="ssh kube-kubectl-us-east-1-b.infra.circleci.com"
+# export PATH="/usr/local/sbin:$PATH"
 
 # Docker
-alias dkps="docker ps --format 'table {{.Names}}\t{{.ID}}\t{{.Status}}'"
-alias dkdn="docker stop $(docker ps -aq) && docker rm $(docker ps -aq)"
+# alias dkps="docker ps --format 'table {{.Names}}\t{{.ID}}\t{{.Status}}'"
+# alias dkdn="docker stop $(docker ps -aq) && docker rm $(docker ps -aq)"
 
 # Docker Compose
 alias dc="docker-compose"
@@ -78,4 +57,4 @@ alias dc="docker-compose"
 unsetopt inc_append_history
 unsetopt share_history
 
-export PATH="/usr/local/opt/node@10/bin:$PATH"
+
