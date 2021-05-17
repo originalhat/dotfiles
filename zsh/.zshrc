@@ -57,4 +57,6 @@ alias dc="docker-compose"
 unsetopt inc_append_history
 unsetopt share_history
 
+# preserve IEX history
+export ERL_AFLAGS="-kernel shell_history enabled"
 
