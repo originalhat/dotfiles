@@ -14,6 +14,7 @@
   bdl = "for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %1B[0;31m%(refname:short)%1B[m'"
   sur = "submodule update --init --recursive"
   please = "push --force-with-lease"
+  tidy = "!~/workspace/dotfiles/bin/prune_elderly_branches.sh \"$(git rev-parse --show-toplevel)\""
 
   unstage = reset HEAD
 

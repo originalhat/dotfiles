@@ -18,6 +18,12 @@ COMPLETION_WAITING_DOTS="true"
 # DISABLE AUTOCORRECT
 unsetopt correct_all
 
+# Word movement with Option+Arrow
+bindkey "\e[1;3D" backward-word
+bindkey "\e[1;3C" forward-word
+bindkey "\eb" backward-word
+bindkey "\ef" forward-word
+
 # zsh magic
 source $ZSH/oh-my-zsh.sh
 
@@ -42,7 +48,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # export PATH="/usr/local/opt/openssl/bin:$PATH"
 
-eval "$(fasd --init auto)"
+# eval "$(fasd --init auto)"
 
 # export PATH="/usr/local/sbin:$PATH"
 
@@ -79,3 +85,4 @@ export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 
 alias yarnf='pushd client >/dev/null && yarn "$@" && popd >/dev/null'
 
+export PATH="$HOME/.local/bin:$PATH"

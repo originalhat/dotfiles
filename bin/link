@@ -1,8 +1,33 @@
 #!/usr/bin/env bash
 
-echo 'link vimrc...✅'
-ln -fs $(pwd)/vim/.vimrc $HOME/.vimrc
+DOTFILES="$HOME/workspace/dotfiles"
 
-echo 'link zshrc...✅'
-ln -fs $(pwd)/zsh/.zshrc $HOME/.zshrc
+echo 'link vimrc...'
+ln -sf "$DOTFILES/vim/.vimrc" "$HOME/.vimrc" && echo '  ✅ ~/.vimrc'
+
+echo 'link vim directory...'
+ln -sf "$DOTFILES/vim/.vim" "$HOME/.vim" && echo '  ✅ ~/.vim'
+
+echo 'link zshrc...'
+ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc" && echo '  ✅ ~/.zshrc'
+
+echo 'link gitconfig...'
+ln -sf "$DOTFILES/git/.gitconfig" "$HOME/.gitconfig" && echo '  ✅ ~/.gitconfig'
+
+echo 'link gitignore_global...'
+ln -sf "$DOTFILES/git/.gitignore_global" "$HOME/.gitignore_global" && echo '  ✅ ~/.gitignore_global'
+
+echo 'link tmux.conf...'
+ln -sf "$DOTFILES/tmux/.tmux.conf" "$HOME/.tmux.conf" && echo '  ✅ ~/.tmux.conf'
+
+echo 'link kitty.conf...'
+mkdir -p "$HOME/.config/kitty"
+ln -sf "$DOTFILES/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf" && echo '  ✅ ~/.config/kitty/kitty.conf'
+
+echo 'link nvim config...'
+mkdir -p "$HOME/.config/nvim"
+ln -sf "$DOTFILES/nvim/init.lua" "$HOME/.config/nvim/init.lua" && echo '  ✅ ~/.config/nvim/init.lua'
+
+echo ''
+echo 'Done! All dotfiles linked.'
 
