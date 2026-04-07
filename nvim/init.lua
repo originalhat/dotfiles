@@ -153,3 +153,19 @@ command! -bang -nargs=* Rg
 
 -- Italic comments
 vim.cmd('highlight Comment cterm=italic gui=italic')
+
+-- ----- Dim background when tmux pane loses focus -----
+local normal_bg = "#1e1e2e"  -- Catppuccin Mocha base
+local dimmed_bg = "#11111b"  -- Catppuccin Mocha crust (matches tmux inactive pane)
+
+vim.api.nvim_create_autocmd("FocusLost", {
+  callback = function()
+    vim.cmd("highlight Normal guibg=" .. dimmed_bg)
+  end,
+})
+
+vim.api.nvim_create_autocmd("FocusGained", {
+  callback = function()
+    vim.cmd("highlight Normal guibg=" .. normal_bg)
+  end,
+})
