@@ -72,19 +72,6 @@ require("lazy").setup({
     end,
   },
 
-  -- LSP (go to definition, autocomplete, etc.)
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      local lspconfig = require("lspconfig")
-      -- TypeScript
-      lspconfig.ts_ls.setup({})
-      -- Add more as needed:
-      -- lspconfig.ruby_lsp.setup({})
-      -- lspconfig.pyright.setup({})
-    end,
-  },
-
   -- Catppuccin theme (native neovim version)
   {
     "catppuccin/nvim",
@@ -119,6 +106,13 @@ require("lazy").setup({
     end,
   },
 })
+
+-- ----- LSP (native vim.lsp.config, nvim 0.11+) -----
+vim.lsp.config('ts_ls', {})
+vim.lsp.enable('ts_ls')
+-- Add more as needed:
+-- vim.lsp.config('ruby_lsp', {})
+-- vim.lsp.enable('ruby_lsp')
 
 -- ----- Keymaps -----
 -- FZF
