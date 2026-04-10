@@ -31,6 +31,7 @@ source $ZSH/oh-my-zsh.sh
 eval "$(direnv hook zsh)"
 
 alias gsd='cd ~/workspace'
+alias obs='cd "/Users/devin/Library/Mobile Documents/iCloud~md~obsidian/Documents/Sepulcher"'
 
 # directories
 alias l='ls -FlG'
