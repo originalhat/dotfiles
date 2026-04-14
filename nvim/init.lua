@@ -163,8 +163,8 @@ command! -bang -nargs=* Rg
 vim.cmd('highlight Comment cterm=italic gui=italic')
 
 -- ----- Dim background when tmux pane loses focus -----
-local normal_bg = "#f0f0f0"  -- Pencil Light background
-local dimmed_bg = "#e0e0e0"  -- Dimmed (matches tmux inactive pane)
+local normal_bg = "#ffffff"  -- Piatto Light background
+local dimmed_bg = "#e8e8e8"  -- Dimmed (matches tmux inactive pane)
 
 vim.api.nvim_create_autocmd("FocusLost", {
   callback = function()
