@@ -30,6 +30,11 @@ source $ZSH/oh-my-zsh.sh
 # direnv
 eval "$(direnv hook zsh)"
 
+# tmux
+alias ta='tmux attach -t'
+alias tl='tmux ls'
+alias td='tmux detach'
+
 alias gsd='cd ~/workspace'
 alias obs='cd "/Users/devin/Library/Mobile Documents/iCloud~md~obsidian/Documents/Sepulcher"'
 

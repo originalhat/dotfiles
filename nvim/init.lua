@@ -72,22 +72,14 @@ require("lazy").setup({
     end,
   },
 
-  -- Catppuccin theme (native neovim version)
+  -- Pencil Light theme
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "preservim/vim-colors-pencil",
     priority = 1000,
     config = function()
-      require("catppuccin").setup({
-        flavour = "mocha",
-        transparent_background = false,
-        term_colors = true,
-        integrations = {
-          treesitter = true,
-          native_lsp = { enabled = true },
-        },
-      })
-      vim.cmd.colorscheme "catppuccin"
+      vim.o.background = "light"
+      vim.g.pencil_gutter_color = 1
+      vim.cmd.colorscheme("pencil")
     end,
   },
 
@@ -96,7 +88,12 @@ require("lazy").setup({
   { "junegunn/fzf.vim" },
 
   -- NERDTree
-  { "preservim/nerdtree" },
+  {
+    "preservim/nerdtree",
+    init = function()
+      vim.g.NERDTreeShowHidden = 1
+    end,
+  },
 
   -- Git signs in gutter
   {
@@ -104,6 +101,23 @@ require("lazy").setup({
     config = function()
       require("gitsigns").setup()
     end,
+  },
+
+  -- Claude Code integration
+  {
+    "coder/claudecode.nvim",
+    dependencies = { "folke/snacks.nvim" },
+    config = true,
+    keys = {
+      { "<leader>a", nil, desc = "AI/Claude Code" },
+      { "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+      { "<leader>af", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
+      { "<leader>ar", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
+      { "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
+      { "<leader>as", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
+      { "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
+      { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
+    },
   },
 })
 
@@ -149,8 +163,8 @@ command! -bang -nargs=* Rg
 vim.cmd('highlight Comment cterm=italic gui=italic')
 
 -- ----- Dim background when tmux pane loses focus -----
-local normal_bg = "#1e1e2e"  -- Catppuccin Mocha base
-local dimmed_bg = "#11111b"  -- Catppuccin Mocha crust (matches tmux inactive pane)
+local normal_bg = "#f0f0f0"  -- Pencil Light background
+local dimmed_bg = "#e0e0e0"  -- Dimmed (matches tmux inactive pane)
 
 vim.api.nvim_create_autocmd("FocusLost", {
   callback = function()
