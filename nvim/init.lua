@@ -72,14 +72,14 @@ require("lazy").setup({
     end,
   },
 
-  -- Pencil Light theme
+  -- Rose Pine Dawn theme
   {
-    "preservim/vim-colors-pencil",
+    "rose-pine/neovim",
+    name = "rose-pine",
     priority = 1000,
     config = function()
-      vim.o.background = "light"
-      vim.g.pencil_gutter_color = 1
-      vim.cmd.colorscheme("pencil")
+      require("rose-pine").setup({ variant = "dawn" })
+      vim.cmd.colorscheme("rose-pine-dawn")
     end,
   },
 
@@ -163,8 +163,8 @@ command! -bang -nargs=* Rg
 vim.cmd('highlight Comment cterm=italic gui=italic')
 
 -- ----- Dim background when tmux pane loses focus -----
-local normal_bg = "#ffffff"  -- Piatto Light background
-local dimmed_bg = "#e8e8e8"  -- Dimmed (matches tmux inactive pane)
+local normal_bg = "#faf4ed"  -- Rose Pine Dawn base
+local dimmed_bg = "#f2e9e1"  -- Rose Pine Dawn overlay (matches tmux inactive pane)
 
 vim.api.nvim_create_autocmd("FocusLost", {
   callback = function()
