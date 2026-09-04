@@ -35,6 +35,9 @@ alias ta='tmux attach -t'
 alias tl='tmux ls'
 alias td='tmux detach'
 
+export EDITOR="nvim"
+export VISUAL="nvim"
+
 alias gsd='cd ~/workspace'
 alias obs='cd "/Users/devin/Library/Mobile Documents/iCloud~md~obsidian/Documents/Sepulcher"'
 
@@ -92,3 +95,39 @@ export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 alias yarnf='pushd client >/dev/null && yarn "$@" && popd >/dev/null'
 
 export PATH="$HOME/.local/bin:$PATH"
+eval "$(~/.local/bin/mise activate zsh)"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export PATH=$PATH:$HOME/.maestro/bin
+
+# bb's CLI binary only lands on PATH inside bb-managed terminals; add it here
+# so `bb` also works from a regular terminal.
+BB_APP_CLI_DIR="/Applications/bb.app/Contents/Resources/app.asar.unpacked/node_modules/bb-app/host-daemon/dist"
+[[ -d "$BB_APP_CLI_DIR" ]] && export PATH="$PATH:$BB_APP_CLI_DIR"
+
+# `bb .` (or `bb <path>`) registers the current dir/repo as a bb project
+# (creating it if needed) instead of erroring out on an unknown command.
+bb() {
+  if [[ $# -eq 1 && ( "$1" == "." || -d "$1" ) ]]; then
+    local target_path
+    target_path="$(cd "$1" && pwd)"
+
+    local existing_id
+    existing_id="$(command bb project list --json 2>/dev/null | \
+      jq -r --arg p "$target_path" \
+      '.[] | select(.sources[]?.path == $p) | .id' | head -n1)"
+
+    if [[ -n "$existing_id" ]]; then
+      echo "bb project already exists for $target_path: $existing_id"
+      command bb project show "$existing_id"
+    else
+      local name
+      name="$(basename "$target_path")"
+      echo "Creating bb project \"$name\" for $target_path"
+      command bb project create --name "$name" --root "$target_path"
+    fi
+    return
+  fi
+
+  command bb "$@"
+}
