@@ -72,6 +72,16 @@ require("lazy").setup({
     end,
   },
 
+  -- Render Markdown inline (headings, lists, code blocks, tables)
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    ft = { "markdown" },
+    config = function()
+      require("render-markdown").setup({})
+    end,
+  },
+
   -- Rose Pine Moon theme
   {
     "rose-pine/neovim",
@@ -101,6 +111,15 @@ require("lazy").setup({
     config = function()
       require("gitsigns").setup()
     end,
+  },
+
+  -- Snacks (image rendering for markdown, used also by claudecode.nvim)
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    opts = {
+      image = { enabled = true },
+    },
   },
 
   -- Claude Code integration
