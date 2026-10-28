@@ -35,6 +35,10 @@ echo 'link nvim config...'
 mkdir -p "$HOME/.config/nvim"
 ln -sf "$DOTFILES/nvim/init.lua" "$HOME/.config/nvim/init.lua" && echo '  ✅ ~/.config/nvim/init.lua'
 
+echo 'link colima config...'
+mkdir -p "$HOME/.colima/default"
+ln -sf "$DOTFILES/colima/colima.yaml" "$HOME/.colima/default/colima.yaml" && echo '  ✅ ~/.colima/default/colima.yaml'
+
 echo ''
 echo 'Done! All dotfiles linked.'
 
