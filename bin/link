@@ -11,6 +11,9 @@ ln -sf "$DOTFILES/vim/.vim" "$HOME/.vim" && echo '  ✅ ~/.vim'
 echo 'link zshrc...'
 ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc" && echo '  ✅ ~/.zshrc'
 
+echo 'link zshenv...'
+ln -sf "$DOTFILES/zsh/.zshenv" "$HOME/.zshenv" && echo '  ✅ ~/.zshenv'
+
 echo 'link gitconfig...'
 ln -sf "$DOTFILES/git/.gitconfig" "$HOME/.gitconfig" && echo '  ✅ ~/.gitconfig'
 

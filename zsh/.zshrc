@@ -40,6 +40,7 @@ export VISUAL="nvim"
 
 alias gsd='cd ~/workspace'
 alias obs='cd "/Users/devin/Library/Mobile Documents/iCloud~md~obsidian/Documents/Sepulcher"'
+alias icloud='cd "/Users/devin/Library/Mobile Documents/com~apple~CloudDocs/"'
 
 # directories
 alias l='ls -FlG'
@@ -131,3 +132,6 @@ bb() {
 
   command bb "$@"
 }
+
+# Temporary Anthropic API-key override for Claude Code (script: ~/.local/bin/claude-api-override)
+alias claude-api='claude-api-override'
