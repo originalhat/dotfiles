@@ -1,0 +1,24 @@
+# Ghostty config for use with tmux
+
+font-family = JetBrains Mono
+font-size = 14
+
+theme = Rose Pine Moon
+
+window-padding-x = 4
+window-padding-y = 4
+macos-titlebar-style = hidden
+
+cursor-style-blink = false
+macos-option-as-alt = true
+
+# Bytes, not lines
+scrollback-limit = 10000000
+
+shell-integration-features = ssh-terminfo
+
+# Clear screen (Cmd+K) - works with tmux
+keybind = cmd+k=text:\x01\x0b
+
+# Option+Enter - send literal newline (for multi-line input in zsh/claude code)
+keybind = alt+enter=text:\n

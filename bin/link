@@ -24,6 +24,10 @@ echo 'link kitty.conf...'
 mkdir -p "$HOME/.config/kitty"
 ln -sf "$DOTFILES/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf" && echo '  ✅ ~/.config/kitty/kitty.conf'
 
+echo 'link ghostty config...'
+mkdir -p "$HOME/.config/ghostty"
+ln -sf "$DOTFILES/ghostty/config" "$HOME/.config/ghostty/config" && echo '  ✅ ~/.config/ghostty/config'
+
 echo 'link nvim config...'
 mkdir -p "$HOME/.config/nvim"
 ln -sf "$DOTFILES/nvim/init.lua" "$HOME/.config/nvim/init.lua" && echo '  ✅ ~/.config/nvim/init.lua'
