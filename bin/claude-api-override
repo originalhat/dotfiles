@@ -1,0 +1,136 @@
+#!/bin/bash
+# Temporarily switches Claude Code (including bb-spawned sessions) from your
+# subscription login to a raw ANTHROPIC_API_KEY, then auto-reverts.
+#
+# It works by writing/removing `env.ANTHROPIC_API_KEY` in ~/.claude/settings.json,
+# which Claude Code reads on every process start -- including ones bb spawns for
+# threads/environments, not just interactive shells. Settings.json values take
+# precedence over a plain shell env var, so this applies everywhere on this
+# machine while active, and stops applying the moment it's reverted.
+#
+# Usage:
+#   claude-api-override on <duration>   e.g. 30m, 2h, 90s (bare number = minutes)
+#   claude-api-override off
+#   claude-api-override status
+
+set -euo pipefail
+
+SETTINGS_FILE="$HOME/.claude/settings.json"
+KEY_REF="${CLAUDE_API_KEY_OP_REF:-op://Private/Anthropic API Key/credential}"
+STATE_FILE="$HOME/.claude/secrets/api-override.state"
+LOG_FILE="$HOME/.claude/secrets/api-override.log"
+mkdir -p "$(dirname "$STATE_FILE")"
+
+usage() {
+  echo "Usage: claude-api-override {on <duration>|off|status}" >&2
+  exit 1
+}
+
+parse_duration_seconds() {
+  local d="$1"
+  if [[ "$d" =~ ^([0-9]+)h$ ]]; then
+    echo $(( BASH_REMATCH[1] * 3600 ))
+  elif [[ "$d" =~ ^([0-9]+)m$ ]]; then
+    echo $(( BASH_REMATCH[1] * 60 ))
+  elif [[ "$d" =~ ^([0-9]+)s$ ]]; then
+    echo "${BASH_REMATCH[1]}"
+  elif [[ "$d" =~ ^([0-9]+)$ ]]; then
+    echo $(( BASH_REMATCH[1] * 60 ))
+  else
+    echo "Invalid duration '$d' (use e.g. 30m, 2h, 90s)" >&2
+    exit 1
+  fi
+}
+
+require_jq() {
+  command -v jq >/dev/null 2>&1 || { echo "jq is required but not installed" >&2; exit 1; }
+}
+
+state_value() {
+  [[ -f "$STATE_FILE" ]] || return 0
+  grep -m1 "^$1=" "$STATE_FILE" | cut -d= -f2- || true
+}
+
+do_off() {
+  require_jq
+  local timer_pid linked_to
+  timer_pid="$(state_value timer_pid)"
+  [[ -n "$timer_pid" && "$timer_pid" != "$PPID" ]] && kill "$timer_pid" 2>/dev/null || true
+  linked_to="$(state_value linked_to)"
+  if [[ -n "$linked_to" ]]; then
+    ln -sfn "$linked_to" "$SETTINGS_FILE"
+  elif [[ -f "$SETTINGS_FILE" ]]; then
+    tmp="$(mktemp "$SETTINGS_FILE.XXXXXX")"
+    jq 'if .env then .env |= del(.ANTHROPIC_API_KEY) else . end' "$SETTINGS_FILE" > "$tmp"
+    mv "$tmp" "$SETTINGS_FILE"
+  fi
+  rm -f "$STATE_FILE"
+  echo "$(date '+%Y-%m-%d %H:%M:%S') off" >> "$LOG_FILE"
+  echo "API override OFF. Claude Code (new sessions) will use your subscription login again."
+}
+
+do_on() {
+  require_jq
+  local duration="${1:-}"
+  [[ -n "$duration" ]] || usage
+  local api_key
+  if ! api_key="$(op read "$KEY_REF")" || [[ -z "$api_key" ]]; then
+    echo "Couldn't read the API key from 1Password ($KEY_REF)." >&2
+    echo "Unlock 1Password, or point CLAUDE_API_KEY_OP_REF at the right item." >&2
+    exit 1
+  fi
+
+  local seconds until_epoch until_human
+  seconds="$(parse_duration_seconds "$duration")"
+  until_epoch=$(( $(date +%s) + seconds ))
+  until_human="$(date -r "$until_epoch" '+%Y-%m-%d %H:%M:%S')"
+
+  # Kill any previous timer so overlapping "on" calls don't fight each other.
+  old_pid="$(state_value timer_pid)"
+  [[ -n "$old_pid" ]] && kill "$old_pid" 2>/dev/null || true
+
+  # A symlinked settings file usually points into a git repo, so put the key in a
+  # standalone copy instead and restore the link on "off".
+  local linked_to
+  linked_to="$(state_value linked_to)"
+  [[ -z "$linked_to" && -L "$SETTINGS_FILE" ]] && linked_to="$(readlink "$SETTINGS_FILE")"
+
+  [[ -f "$SETTINGS_FILE" ]] || echo '{}' > "$SETTINGS_FILE"
+  tmp="$(mktemp "$SETTINGS_FILE.XXXXXX")"
+  jq --arg key "$api_key" '.env = ((.env // {}) + {ANTHROPIC_API_KEY: $key})' "$SETTINGS_FILE" > "$tmp"
+  mv "$tmp" "$SETTINGS_FILE"
+
+  nohup bash -c "sleep $seconds; '$0' off" >/dev/null 2>>"$LOG_FILE" &
+  disown
+  local timer_pid=$!
+
+  {
+    echo "until_epoch=$until_epoch"
+    echo "until_human=$until_human"
+    echo "timer_pid=$timer_pid"
+    [[ -n "$linked_to" ]] && echo "linked_to=$linked_to"
+  } > "$STATE_FILE"
+
+  echo "$(date '+%Y-%m-%d %H:%M:%S') on until $until_human (pid $timer_pid)" >> "$LOG_FILE"
+  echo "API override ON until $until_human ($duration)."
+  echo "Applies to every new Claude Code session on this machine (including bb threads)."
+  echo "Run 'claude-api-override off' to revert early, or 'claude-api-override status' to check."
+}
+
+do_status() {
+  local until_epoch now
+  until_epoch="$(state_value until_epoch)"
+  now=$(date +%s)
+  if [[ -n "$until_epoch" && "$now" -lt "$until_epoch" ]]; then
+    echo "API override ACTIVE until $(state_value until_human) ($(( (until_epoch - now) / 60 ))m remaining)."
+    return 0
+  fi
+  echo "API override OFF (using subscription login)."
+}
+
+case "${1:-}" in
+  on) shift; do_on "${1:-}" ;;
+  off) do_off ;;
+  status) do_status ;;
+  *) usage ;;
+esac
