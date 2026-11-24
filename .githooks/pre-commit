@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+mise exec -- gitleaks git --staged --no-banner --redact
+mise exec -- shellcheck bin/setup bin/claude-api-override .githooks/pre-commit
+mise exec -- bats test

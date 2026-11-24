@@ -1,0 +1,2 @@
+# Touch ID for sudo. Lives in sudo_local so macOS updates leave it alone.
+auth       sufficient     pam_tid.so

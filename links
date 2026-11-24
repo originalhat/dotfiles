@@ -1,0 +1,18 @@
+# source                  target (relative to $HOME)
+zsh/.zshrc                .zshrc
+zsh/.zshenv               .zshenv
+git/.gitconfig            .gitconfig
+git/work.gitconfig        .gitconfig.work
+git/.gitignore_global     .gitignore_global
+vim/.vimrc                .vimrc
+vim/.vim                  .vim
+nvim/init.lua             .config/nvim/init.lua
+tmux/.tmux.conf           .tmux.conf
+ghostty/config            .config/ghostty/config
+kitty/kitty.conf          .config/kitty/kitty.conf
+wezterm/wezterm.lua       .config/wezterm/wezterm.lua
+colima/colima.yaml        .colima/default/colima.yaml
+mise/config.toml          .config/mise/config.toml
+npm/.npmrc                .npmrc
+uv/uv.toml                .config/uv/uv.toml
+bin/claude-api-override   .local/bin/claude-api-override

@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+# Converge this machine to the dotfiles repo. Safe to run repeatedly.
+#   bin/setup           link files, then install packages and system settings
+#   bin/setup --check   report drift only; exit 1 if anything is out of place
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+MODE="apply"
+[[ "${1:-}" == "--check" ]] && MODE="check"
+drift=0
+
+each_link() {
+  local source target
+  while read -r source target; do
+    [[ -z "$source" || "$source" == \#* ]] && continue
+    if [[ ! -e "$ROOT/$source" ]]; then
+      echo "error: $source is listed in links but does not exist" >&2
+      exit 2
+    fi
+    "$1" "$ROOT/$source" "$HOME/$target" "$target"
+  done < "$ROOT/links"
+}
+
+check_link() {
+  local source="$1" target="$2" label="$3"
+  if [[ -L "$target" && "$(readlink "$target")" == "$source" ]]; then
+    return
+  elif [[ -L "$target" ]]; then
+    echo "drift: ~/$label points to $(readlink "$target")"
+  elif [[ -e "$target" ]]; then
+    echo "drift: ~/$label is a regular file, not a link"
+  else
+    echo "drift: ~/$label is missing"
+  fi
+  drift=1
+}
+
+apply_link() {
+  local source="$1" target="$2" label="$3"
+  [[ -L "$target" && "$(readlink "$target")" == "$source" ]] && return
+
+  mkdir -p "$(dirname "$target")"
+  if [[ -e "$target" && ! -L "$target" ]]; then
+    mv "$target" "$target.pre-dotfiles"
+    echo "backed up ~/$label to ~/$label.pre-dotfiles"
+  fi
+  ln -sfn "$source" "$target"
+  echo "linked ~/$label"
+}
+
+enable_touch_id_for_sudo() {
+  local installed="/etc/pam.d/sudo_local"
+  cmp -s "$ROOT/macos/sudo_local" "$installed" && return
+  echo "enabling Touch ID for sudo (asks for your password once)"
+  sudo install -m 444 -o root -g wheel "$ROOT/macos/sudo_local" "$installed"
+}
+
+install_packages() {
+  if command -v brew >/dev/null; then
+    brew bundle --file="$ROOT/Brewfile" --no-upgrade
+  fi
+  (cd "$HOME" && "$HOME/.local/bin/mise" install)
+  git -C "$ROOT" config core.hooksPath .githooks
+  [[ "$(uname -s)" == "Darwin" ]] && enable_touch_id_for_sudo
+  return 0
+}
+
+if [[ "$MODE" == "check" ]]; then
+  each_link check_link
+  exit "$drift"
+fi
+
+each_link apply_link
+[[ "${DOTFILES_SKIP_PACKAGES:-}" == "1" ]] || install_packages
