@@ -1,51 +1,9 @@
-[submodule "vim/.vim/bundle/vim-jsx"]
-	path = vim/.vim/bundle/vim-jsx
-	url = https://github.com/mxw/vim-jsx.git
-[submodule "vim/.vim/bundle/ale"]
-	path = vim/.vim/bundle/ale
-	url = https://github.com/w0rp/ale.git
-[submodule "vim/.vim/bundle/nerdtree"]
-	path = vim/.vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/.vim/bundle/rust.vim"]
-	path = vim/.vim/bundle/rust.vim
-	url = https://github.com/rust-lang/rust.vim
-[submodule "vim/.vim/bundle/typescript-vim"]
-	path = vim/.vim/bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim
-[submodule "vim/.vim/bundle/vim-fugative"]
-	path = vim/.vim/bundle/vim-fugative
-	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/.vim/bundle/vim-fugitive"]
-	path = vim/.vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/.vim/bundle/vim-surround"]
-	path = vim/.vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround
-[submodule "vim/.vim/bundle/vim-gitgutter"]
-	path = vim/.vim/bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/.vim/bundle/vundle"]
-	path = vim/.vim/bundle/vundle
-	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/.vim/nerdtree"]
-	path = vim/.vim/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
-[submodule "vim/.vim/bundle/vim-dispatch"]
-	path = vim/.vim/bundle/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
-[submodule "vim/.vim/bundle/vim-fireplace"]
-	path = vim/.vim/bundle/vim-fireplace
-	url = https://github.com/tpope/vim-fireplace
-[submodule "vim/.vim/bundle/ctrlp.vim"]
-	path = vim/.vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/.vim/bundle/fzf"]
 	path = vim/.vim/bundle/fzf
 	url = https://github.com/junegunn/fzf
 [submodule "vim/.vim/bundle/fzf.vim"]
 	path = vim/.vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule "vim/.vim/bundle/nerdtree"]
+	path = vim/.vim/bundle/nerdtree
+	url = https://github.com/preservim/nerdtree
