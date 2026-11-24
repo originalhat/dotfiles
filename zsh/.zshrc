@@ -53,45 +53,18 @@ alias gst='git status'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# export PATH="$PATH:$HOME/.rvm/bin"
-
-# export PATH="/usr/local/opt/openssl/bin:$PATH"
-
-# eval "$(fasd --init auto)"
-
-# export PATH="/usr/local/sbin:$PATH"
-
-# Docker
-# alias dkps="docker ps --format 'table {{.Names}}\t{{.ID}}\t{{.Status}}'"
-# alias dkdn="docker stop $(docker ps -aq) && docker rm $(docker ps -aq)"
-
 # Docker Compose
 alias dc="docker-compose"
 
 # Don't share history immediately
 unsetopt inc_append_history
 unsetopt share_history
+source "${${(%):-%x}:A:h}/history-filter.zsh"
 
 # preserve IEX history
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# Ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 export PATH="/opt/homebrew/bin:$PATH"
-
-export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
-
-# export PATH=$(pyenv root)/shims:$PATH/
-
-# source /Users/devin/.docker/init-zsh.sh || true # Added by Docker Desktop
 
 alias yarnf='pushd client >/dev/null && yarn "$@" && popd >/dev/null'
 

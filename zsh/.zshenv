@@ -32,3 +32,5 @@ unset fn_file
 . "$HOME/.cargo/env"
 # Agent tool shells run zsh non-interactively and write bash: `echo ====` trips EQUALS expansion, `--include=*.rb` trips NOMATCH.
 [[ -o interactive ]] || unsetopt EQUALS NOMATCH
+# Agent tool shells skip .zshrc (and mise activate), so give them mise's ruby/node through shims.
+[[ -o interactive ]] || export PATH="$HOME/.local/share/mise/shims:$PATH"

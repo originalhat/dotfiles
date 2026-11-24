@@ -1,0 +1,10 @@
+# Machine-wide tools. Projects pin their own versions with .ruby-version / .nvmrc,
+# which mise reads directly.
+[tools]
+ruby = "3.4.13"
+node = "24.22.3"
+
+[settings]
+idiomatic_version_file_enable_tools = ["ruby", "node"]
+minimum_release_age = "3d"
+node.corepack = true
