@@ -8,6 +8,8 @@
 [alias]
   ci = commit --verbose
   co = checkout
+  commend = commit --amend --no-edit
+  co-main = "!git checkout \"$(git symbolic-ref --short refs/remotes/origin/HEAD | sed 's@^origin/@@')\""
   ll = log --graph --numstat --abbrev-commit
   l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   bdr = "for-each-ref --sort=-committerdate refs/remotes/ --format='%(committerdate:short) %1B[0;31m%(refname:short)%1B[m'"
@@ -15,17 +17,28 @@
   sur = "submodule update --init --recursive"
   please = "push --force-with-lease"
   tidy = "!~/workspace/dotfiles/bin/prune_elderly_branches.sh \"$(git rev-parse --show-toplevel)\""
+  dft = -c diff.external=difft diff
+  dlog = -c diff.external=difft log -p --ext-diff
 
   unstage = reset HEAD
 
   develop = checkout develop
   master  = checkout master
 [core]
-	excludesfile = /Users/devinbrown/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [github]
   user = originalhat
-[pull]
-	default = current
+[init]
+  defaultBranch = main
+[branch]
+  sort = -committerdate
 [push]
-	default = current
+  default = current
+  autoSetupRemote = true
 
+[includeIf "hasconfig:remote.*.url:https://github.com/origami-medical/**"]
+  path = ~/.gitconfig.work
+[includeIf "hasconfig:remote.*.url:git@github.com:origami-medical/**"]
+  path = ~/.gitconfig.work
+[include]
+  path = ~/.gitconfig.local

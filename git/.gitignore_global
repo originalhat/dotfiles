@@ -3,4 +3,7 @@
 .lein/
 *.swp
 .DS_Store
+.worktrees/
+.claude/settings.local.json
 
+**/.claude/.cc-writes/
